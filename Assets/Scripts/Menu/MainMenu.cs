@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button primaryMainButton;
     [SerializeField] private Button primaryOptionsButton;
     [SerializeField] private Button sliderBackground;
-    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Button backButton;
 
     void Start()
     {
@@ -24,6 +24,11 @@ public class MainMenu : MonoBehaviour
     public void SelectPrimaryOptionsButton()
     {
         primaryOptionsButton.Select();
+    }
+
+    public void SelectPrimaryBackButton()
+    {
+        backButton.Select();
     }
 
     public void SelectPrimaryMainButton()
