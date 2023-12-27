@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
@@ -10,27 +11,34 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button primaryOptionsButton;
     [SerializeField] private Button sliderBackground;
     [SerializeField] private Button backButton;
+    [SerializeField] private Button continueButton;
 
     void Start()
     {
         primaryMainButton.Select();
+        if (!DataPersistanceManager.instance.HasGameData())
+        {
+            continueButton.interactable = false;
+            TMP_Text text = continueButton.GetComponentInChildren<TMP_Text>();
+            text.color = Color.grey;
+        }
     }
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadSceneAsync(1);
     }
 
     public void OnNewGameClicked()
     {
-        Debug.Log(DataPersistanceManager.instance);
+        Debug.Log("new");
         DataPersistanceManager.instance.NewGame();
         PlayGame();
     }
 
     public void OnLoadGameClicked()
     {
-        DataPersistanceManager.instance.LoadGame();
+        Debug.Log("Loading");
         PlayGame();
     }
 
