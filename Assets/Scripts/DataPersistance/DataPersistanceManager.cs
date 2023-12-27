@@ -39,6 +39,7 @@ public class DataPersistanceManager : MonoBehaviour
 
     public void LoadGame()
     {
+        this.gameData = dataHandler.Load();
         if (this.gameData == null)
         {
             Debug.Log("No data 3was found. Initializing data to defaults");
@@ -49,8 +50,6 @@ public class DataPersistanceManager : MonoBehaviour
         {
             dataPeristanceObj.LoadData(gameData);
         }
-
-        Debug.Log("Loaded cock count " + gameData.cockToken);
     }
 
     public void SaveGame()
@@ -59,8 +58,7 @@ public class DataPersistanceManager : MonoBehaviour
         {
             dataPeristanceObj.SaveData(ref gameData);
         }
-
-        Debug.Log("Saved cock count " + gameData.cockToken);
+        dataHandler.Save(gameData);
     }
 
     private void OnApplicationQuit()

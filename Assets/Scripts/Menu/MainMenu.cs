@@ -23,18 +23,17 @@ public class MainMenu : MonoBehaviour
 
     public void OnNewGameClicked()
     {
+        Debug.Log(DataPersistanceManager.instance);
         DataPersistanceManager.instance.NewGame();
+        PlayGame();
     }
 
     public void OnLoadGameClicked()
     {
         DataPersistanceManager.instance.LoadGame();
+        PlayGame();
     }
 
-    public void SaveGame()
-    {
-
-    }
 
     public void SelectPrimaryOptionsButton()
     {
@@ -53,6 +52,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        DataPersistanceManager.instance.SaveGame();
         Application.Quit();
     }
 

@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameData
 {
     public int xp;
-    public int cockToken = 0;
+    public SerializableDictionary<string, bool> cocksCollected;
     public bool dash = false;
     public bool wall = false;
     public int currency = 20;
@@ -14,7 +14,7 @@ public class GameData
     public GameData()
     {
         this.xp = 100;
-        this.cockToken = 0;
+        cocksCollected = new SerializableDictionary<string, bool>();
         this.currency = 100;
         this.dash = false;
         this.wall = false;
