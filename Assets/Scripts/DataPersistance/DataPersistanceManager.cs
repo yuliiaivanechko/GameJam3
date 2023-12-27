@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class DataPersistanceManager : MonoBehaviour
 {
+    [Header("File Storage Config")]
+    [SerializeField] private string fileName;
+
     public static DataPersistanceManager instance { get; private set; }
 
-    private GameData gameData; 
+    private List<IDataPersistance> dataPersistanceObjects;
+
+    private GameData gameData;
+
+    private FileDataHandler dataHandler;
 
     private void Awake()
     {
@@ -19,12 +27,9 @@ public class DataPersistanceManager : MonoBehaviour
 
     private void Start()
     {
+        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
+        this.dataPersistanceObjects = FindAllDataPersistanceObjects();
         LoadGame();
-    }
-
-    private void OnApplicationQuit()
-    {
-        SaveGame();
     }
 
     public void NewGame()
@@ -39,10 +44,36 @@ public class DataPersistanceManager : MonoBehaviour
             Debug.Log("No data 3was found. Initializing data to defaults");
             NewGame();
         }
+
+        foreach (IDataPersistance dataPeristanceObj in dataPersistanceObjects)
+        {
+            dataPeristanceObj.LoadData(gameData);
+        }
+
+        Debug.Log("Loaded cock count " + gameData.cockToken);
     }
 
     public void SaveGame()
     {
+        foreach (IDataPersistance dataPeristanceObj in dataPersistanceObjects)
+        {
+            dataPeristanceObj.SaveData(ref gameData);
+        }
 
+        Debug.Log("Saved cock count " + gameData.cockToken);
     }
+
+    private void OnApplicationQuit()
+    {
+        SaveGame();
+    }
+
+    private List<IDataPersistance> FindAllDataPersistanceObjects()
+    {
+        IEnumerable<IDataPersistance> dataPersistanceObjects = FindObjectsOfType<MonoBehaviour>()
+            .OfType<IDataPersistance>();
+
+        return new List<IDataPersistance>(dataPersistanceObjects);
+    }
+
 }
