@@ -21,6 +21,21 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void OnNewGameClicked()
+    {
+        DataPersistanceManager.instance.NewGame();
+    }
+
+    public void OnLoadGameClicked()
+    {
+        DataPersistanceManager.instance.LoadGame();
+    }
+
+    public void SaveGame()
+    {
+
+    }
+
     public void SelectPrimaryOptionsButton()
     {
         primaryOptionsButton.Select();
