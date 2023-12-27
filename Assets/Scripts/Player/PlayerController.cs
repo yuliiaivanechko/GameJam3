@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
     private float _wallJumpDuration;
 
     [SerializeField]
+    private float _comboMaxDelay;
+
+    [SerializeField]
     private Collider2D _bottomCollider;
 
     [SerializeField]
@@ -48,11 +51,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private LayerMask _wallLayer;
 
-
     private static readonly int IsMoving = Animator.StringToHash("IsMoving");
     private static readonly int Jump = Animator.StringToHash("Jump");
     private static readonly int Dash = Animator.StringToHash("Dash");
     private static readonly int Attack = Animator.StringToHash("Attack");
+    private static readonly int AttackType = Animator.StringToHash("AttackType");
+    private static readonly int AttackTypesAmount = 3;
 
     private PlayerState _state;
     private float _horizontalInput;
@@ -61,6 +65,8 @@ public class PlayerController : MonoBehaviour
     private bool _isOnGround;
     private float _dashTime;
     private float _wallJumpTime;
+    private float _comboTime;
+    private int _attackType;
 
     private Rigidbody2D _rigidbody;
     private Animator _animator;
@@ -77,6 +83,7 @@ public class PlayerController : MonoBehaviour
         _dashTime = 0.0f;
         _wallJumpTime = 0.0f;
         _state = PlayerState.Idle;
+        _attackType = 0;
 
     }
 
@@ -112,6 +119,7 @@ public class PlayerController : MonoBehaviour
         UpdateJumpState();
         UpdateDashState(Time.fixedDeltaTime);
         UpdateWallJumpState(Time.fixedDeltaTime);
+        UpdateComboState(Time.fixedDeltaTime);
     }
 
     private bool IsAbilityUnlocked(PlayerAbilities ability)
@@ -172,6 +180,23 @@ public class PlayerController : MonoBehaviour
         {
             _wallJumpTime = 0.0f;
             _state = PlayerState.Idle;
+        }
+    }
+
+    private void UpdateComboState(float timeDelta)
+    {
+        if (_attackType == 0)
+        {
+            _comboTime = 0;
+            return;
+        }
+
+        _comboTime += timeDelta;
+        if (_comboTime > _comboMaxDelay)
+        {
+            _comboTime = 0;
+            _attackType = 0;
+            _animator.SetInteger(AttackType, _attackType);
         }
     }
 
@@ -239,8 +264,10 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        _animator.SetTrigger(Attack);
 
+        _attackType = (_attackType + 1) % AttackTypesAmount;
+        _animator.SetTrigger(Attack);
+        _animator.SetInteger(AttackType, _attackType);
     }
 
 
