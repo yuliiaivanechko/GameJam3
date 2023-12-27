@@ -24,22 +24,17 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void PlayGame()
-    {
-        SceneManager.LoadSceneAsync(1);
-    }
-
     public void OnNewGameClicked()
     {
         Debug.Log("new");
         DataPersistanceManager.instance.NewGame();
-        PlayGame();
+        SceneManager.LoadSceneAsync(1);
     }
 
     public void OnLoadGameClicked()
     {
         Debug.Log("Loading");
-        PlayGame();
+        SceneManager.LoadSceneAsync(DataPersistanceManager.instance.gameData.sceneName);
     }
 
 

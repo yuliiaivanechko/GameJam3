@@ -112,6 +112,8 @@ public class FearController : MonoBehaviour
         {
             FearData.ChangeFearLevel(_fearPerScene);
         }
+
+        Debug.Log(FearData.fearLevel);
     }
 
     private void SetInitialIDS()
@@ -123,7 +125,6 @@ public class FearController : MonoBehaviour
             id++;
         }
     }
-
 
     private void UpdateEntitiesBasedOnFearLevel()
     {

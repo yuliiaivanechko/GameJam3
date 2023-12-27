@@ -13,9 +13,10 @@ public class DataPersistanceManager : MonoBehaviour
 
     private List<IDataPersistance> dataPersistanceObjects;
 
-    private GameData gameData;
+    public GameData gameData;
 
     private FileDataHandler dataHandler;
+    private string prevScene;
 
     private void Awake()
     {
@@ -45,21 +46,20 @@ public class DataPersistanceManager : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         this.dataPersistanceObjects = FindAllDataPersistanceObjects();
-        LoadGame();
+        LoadGame(prevScene);
     }
 
     public void OnSceneUnloaded(Scene scene)
     {
-        SaveGame();
+        prevScene = scene.name;
     }
-
 
     public void NewGame()
     {
         this.gameData = new GameData();
     }
 
-    public void LoadGame()
+    public void LoadGame(string prevScene)
     {
         this.gameData = dataHandler.Load();
         if (this.gameData == null)
@@ -70,7 +70,7 @@ public class DataPersistanceManager : MonoBehaviour
 
         foreach (IDataPersistance dataPeristanceObj in dataPersistanceObjects)
         {
-            dataPeristanceObj.LoadData(gameData);
+            dataPeristanceObj.LoadData(gameData, prevScene);
         }
     }
 
@@ -87,11 +87,6 @@ public class DataPersistanceManager : MonoBehaviour
             dataPeristanceObj.SaveData(ref gameData);
         }
         dataHandler.Save(gameData);
-    }
-
-    private void OnApplicationQuit()
-    {
-        SaveGame();
     }
 
     private List<IDataPersistance> FindAllDataPersistanceObjects()

@@ -71,6 +71,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Animator _animator;
 
+    private HashSet<IInteractable> _activeInteracts;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -84,6 +86,7 @@ public class PlayerController : MonoBehaviour
         _wallJumpTime = 0.0f;
         _state = PlayerState.Idle;
         _attackType = 0;
+        _activeInteracts = new HashSet<IInteractable>();
 
     }
 
@@ -200,6 +203,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        IInteractable interactable = collision.GetComponent<IInteractable>();
+        if (interactable != null)
+        {
+            _activeInteracts.Add(interactable);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        IInteractable interactable = collision.GetComponent<IInteractable>();
+        if (interactable != null)
+        {
+            _activeInteracts.Remove(interactable);
+        }
+    }
+
     private void OnMove(InputValue value)
     {
         if (_state == PlayerState.Dash || _state == PlayerState.WallJump)
@@ -268,6 +289,14 @@ public class PlayerController : MonoBehaviour
         _animator.SetTrigger(Attack);
         _animator.SetInteger(AttackType, _attackType);
         _attackType = (_attackType + 1) % AttackTypesAmount;
+    }
+
+    private void OnInteract()
+    {
+        foreach (IInteractable interactable in _activeInteracts)
+        {
+            interactable.Interact(gameObject);
+        }
     }
 
 

@@ -10,6 +10,8 @@ public class GameData
     public bool dash = false;
     public bool wall = false;
     public int currency = 20;
+    public string sceneName;
+    public string prevScene;
 
     public GameData()
     {
@@ -18,6 +20,8 @@ public class GameData
         this.currency = 100;
         this.dash = false;
         this.wall = false;
+        sceneName = null;
+        prevScene = null;
     }
 
 }

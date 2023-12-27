@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour, IDataPersistance
     public int currency = 20;
 
 
-    public void LoadData(GameData data)
+    public void LoadData(GameData data, string prevScene)
     {
         this.wall = data.wall;
         this.dash = data.dash;

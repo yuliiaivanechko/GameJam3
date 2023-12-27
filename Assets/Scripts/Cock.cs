@@ -22,7 +22,7 @@ public class Cock : MonoBehaviour, IDataPersistance
         visual = this.GetComponentInChildren<SpriteRenderer>();
     }
 
-    public void LoadData(GameData data)
+    public void LoadData(GameData data, string prevScene)
     {
         data.cocksCollected.TryGetValue(id, out collected);
         if (collected)
