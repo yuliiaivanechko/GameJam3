@@ -265,9 +265,9 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        _attackType = (_attackType + 1) % AttackTypesAmount;
         _animator.SetTrigger(Attack);
         _animator.SetInteger(AttackType, _attackType);
+        _attackType = (_attackType + 1) % AttackTypesAmount;
     }
 
 
