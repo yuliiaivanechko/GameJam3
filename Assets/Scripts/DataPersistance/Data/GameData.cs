@@ -9,7 +9,7 @@ public class GameData
     public SerializableDictionary<string, bool> cocksCollected;
     public bool dash = false;
     public bool wall = false;
-    public int currency = 20;
+    public bool doubleJump = false;
     public string sceneName;
     public string prevScene;
 
@@ -17,7 +17,7 @@ public class GameData
     {
         this.xp = 100;
         cocksCollected = new SerializableDictionary<string, bool>();
-        this.currency = 100;
+        this.doubleJump = false;
         this.dash = false;
         this.wall = false;
         sceneName = null;

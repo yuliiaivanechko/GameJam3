@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Dash
+  - Wall
+  - DoubleJump
   layers:
   - Default
   - TransparentFX
@@ -40,6 +43,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Abilities
+    uniqueID: 4058921217
     locked: 0
   - name: Player
     uniqueID: 4138391795

@@ -298,6 +298,4 @@ public class PlayerController : MonoBehaviour
             interactable.Interact(gameObject);
         }
     }
-
-
 }

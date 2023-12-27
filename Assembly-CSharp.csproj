@@ -61,16 +61,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\DataPersistance\Data\GameData.cs" />
+    <Compile Include="Assets\Scripts\FearSystem\FearEntity.cs" />
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\DataPersistance\IDataPersistance.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\DataPersistance\FileDataHandler.cs" />
     <Compile Include="Assets\Scripts\Cock.cs" />
+    <Compile Include="Assets\Scripts\Enemy\DroneEnemy.cs" />
     <Compile Include="Assets\Scripts\DataPersistance\SerializableTypes\SerializableDictionary.cs" />
     <Compile Include="Assets\Scripts\Menu\Slider.cs" />
     <Compile Include="Assets\Scripts\DataPersistance\DataPersistanceManager.cs" />
+    <Compile Include="Assets\Scripts\SavePoints\SpawnPointsManager.cs" />
+    <Compile Include="Assets\Scripts\FearSystem\FearController.cs" />
+    <Compile Include="Assets\Scripts\Interactable\IInteractable.cs" />
     <Compile Include="Assets\Scripts\Player\InputActions.cs" />
+    <Compile Include="Assets\Scripts\SavePoints\SavePoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
