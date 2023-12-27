@@ -107,11 +107,11 @@ public class PlayerController : MonoBehaviour
         Vector3 localScale = transform.localScale;
         if (_rigidbody.velocity.x > 0.0f)
         {
-            localScale.x = 1.0f;
+            localScale.x = Mathf.Abs(localScale.x);
         }
         else if (_rigidbody.velocity.x < 0.0f)
         {
-            localScale.x = -1.0f;
+            localScale.x = -Mathf.Abs(localScale.x);
         }
         transform.localScale = localScale;
 

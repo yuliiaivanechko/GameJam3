@@ -96,3 +96,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/Assembly-CSharp.csproj
+/.vsconfig
+/GameJam3.sln
