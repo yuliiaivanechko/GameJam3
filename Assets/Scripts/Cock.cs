@@ -42,6 +42,7 @@ public class Cock : MonoBehaviour, IDataPersistance
 
     private void OnTriggerEnter2D()
     {
+        Debug.Log("Shut up chicken");
         if (!collected)
         {
             CollectCock();
@@ -55,7 +56,8 @@ public class Cock : MonoBehaviour, IDataPersistance
 
     void CollectCock()
     {
-
+        collected = true;
+        visual.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
