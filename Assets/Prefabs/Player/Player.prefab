@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7040506919310932812}
   - component: {fileID: 1249393892972650121}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SwordCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5626583106478198714}
   - component: {fileID: 562070422329241603}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BottomCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3518923895322289298}
   - component: {fileID: 535267635595203787}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SidesCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 6048059604334702009}
   - component: {fileID: 98426801658065366}
   - component: {fileID: 4522013200777311944}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,8 +309,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -156575501
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -1694175734, guid: a984559cf3b9da74fab828a8874b305c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
