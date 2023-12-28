@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (_health == null)
+        if (IsDead)
         {
             return;
         }
@@ -41,7 +41,17 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator KillEnemy()
     {
-        yield return new WaitForSeconds(1.0f);
+        var renderers = GetComponentsInChildren<SpriteRenderer>();
+        for (int i = 10; i >= 0; i--)
+        {
+            foreach (var renderer in renderers)
+            {
+                Color color = renderer.color;
+                color.a = i / 10.0f;
+                renderer.color = color;
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
         Destroy(gameObject);
     }
 
