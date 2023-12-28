@@ -219,6 +219,12 @@ public class PlayerController : MonoBehaviour
         {
             _activeInteracts.Remove(interactable);
         }
+
+        SceneChanger sceneChanger = collision.GetComponent<SceneChanger>();
+        if (sceneChanger != null)
+        {
+            sceneChanger.ChangeScene();
+        }
     }
 
     private void OnMove(InputValue value)
