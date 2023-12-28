@@ -102,6 +102,12 @@ public class PlayerController : MonoBehaviour
 
         TrackEnemyDamage();
 
+        if (_health.IsDead)
+        {
+            _state = PlayerState.Locked;
+            return;
+        }
+
         float speedMultiplier = 1.0f;
         float velocityY = _rigidbody.velocity.y;
         if (_state == PlayerState.Dash)
@@ -255,7 +261,7 @@ public class PlayerController : MonoBehaviour
         }
 
         Enemy enemy = collision.GetComponent<Enemy>();
-        if (enemy != null)
+        if (enemy != null && !enemy.IsDead)
         {
             _activeEnemies.Add(enemy);
             _health.TakeDamage(enemy.Damage);
@@ -290,7 +296,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnJump()
     {
-        if (_state == PlayerState.Dash)
+        if (_state == PlayerState.Dash || _state == PlayerState.Locked)
         {
             return;
         }
@@ -339,7 +345,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnAttack()
     {
-        if (_state == PlayerState.Dash)
+        if (_state == PlayerState.Dash || _state == PlayerState.Locked)
         {
             return;
         }
@@ -351,6 +357,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnInteract()
     {
+        if (_state == PlayerState.Locked)
+        {
+            return;
+        }
         foreach (IInteractable interactable in _activeInteracts)
         {
             interactable.Interact(gameObject);
