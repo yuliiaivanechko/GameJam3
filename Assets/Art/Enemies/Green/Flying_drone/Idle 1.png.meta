@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 04d9c862a2ac911498e8cef91bf15e52
+guid: 1283a3178c1efcf41aabaf24b0364895
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Death_0
+      name: Idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1327f2d8d4cb84f46a0107e6da076a98
-      internalID: 2090845939
+      spriteID: 4ac3da92773d8bd43a8fae44dacba631
+      internalID: -1162546119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Death_1
+      name: Idle_1
       rect:
         serializedVersion: 2
         x: 48
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7d9b65d5b7aa23478c2690789440260
-      internalID: 988457908
+      spriteID: d2b95f01bd618974ba44aa1a09805df3
+      internalID: -1076307619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Death_2
+      name: Idle_2
       rect:
         serializedVersion: 2
         x: 96
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b753e9a5663f36d4086b4f3a80651b1f
-      internalID: 1221844937
+      spriteID: 22f65723c31e98b48a3a33b93953ff63
+      internalID: -1758117443
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Death_3
+      name: Idle_3
       rect:
         serializedVersion: 2
         x: 144
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83e66ae7690afc84b8fd54ae0c131791
-      internalID: -1017290471
+      spriteID: 422cd415aca97564898e52fc20f7d74c
+      internalID: -93486972
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Death_0: 2090845939
-      Death_1: 988457908
-      Death_2: 1221844937
-      Death_3: -1017290471
+      Idle_0: -1162546119
+      Idle_1: -1076307619
+      Idle_2: -1758117443
+      Idle_3: -93486972
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

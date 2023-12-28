@@ -4,32 +4,48 @@ using System.Collections;
 public class Health : MonoBehaviour
 {
     [Header("Health")]
-    [SerializeField] private float startingHealth;
-    public float currentHealth { get; private set; }
+    [SerializeField] 
+    private float startingHealth;
+    public float CurrentHealth
+    {
+        get
+        {
+            return GetCurrentHealth();
+        }
+        private set
+        {
+            SetCurrentHealth(value);
+        }
+    }
+
     private Animator anim;
     private bool dead;
 
     [Header("iFrames")]
-    [SerializeField] private float iFramesDuration;
-    [SerializeField] private int numberOfFlashes;
+    [SerializeField]
+    private float iFramesDuration;
+    [SerializeField]
+    private int numberOfFlashes;
+
     private SpriteRenderer spriteRend;
 
     [Header("Components")]
-    [SerializeField] private Behaviour[] components;
+    [SerializeField] 
+    private Behaviour[] components;
+
     private bool invulnerable;
 
-    private void Awake()
+    protected virtual void Awake()
     {
-        currentHealth = startingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
     }
     public void TakeDamage(float _damage)
     {
         if (invulnerable) return;
-        currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
+        CurrentHealth = Mathf.Clamp(CurrentHealth - _damage, 0, startingHealth);
 
-        if (currentHealth > 0)
+        if (CurrentHealth > 0)
         {
             anim.SetTrigger("Damage");
             StartCoroutine(Invunerability());
@@ -48,10 +64,34 @@ public class Health : MonoBehaviour
             }
         }
     }
+
+    public bool IsDead
+    {
+        get
+        {
+            return dead;
+        }
+    }
     public void AddHealth(float _value)
     {
-        currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+        CurrentHealth = Mathf.Clamp(CurrentHealth + _value, 0, startingHealth);
     }
+
+    public void ResetHealth()
+    {
+        CurrentHealth = startingHealth;
+    }
+
+    protected virtual float GetCurrentHealth()
+    {
+        return 0;
+    }
+
+    protected virtual void SetCurrentHealth(float health)
+    {
+        return;
+    }
+
     private IEnumerator Invunerability()
     {
         invulnerable = true;

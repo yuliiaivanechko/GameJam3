@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7040506919310932812}
   - component: {fileID: 1249393892972650121}
+  - component: {fileID: 6293197929807443181}
   m_Layer: 8
   m_Name: SwordCollider
   m_TagString: Untagged
@@ -77,6 +78,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18384552, y: 0.13073349}
   m_EdgeRadius: 0
+--- !u!114 &6293197929807443181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213909057517102303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5823da524f18f5048bffae8ef7fb7647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 10
 --- !u!1 &5310250043028618982
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +260,7 @@ GameObject:
   - component: {fileID: 6048059604334702009}
   - component: {fileID: 98426801658065366}
   - component: {fileID: 4522013200777311944}
+  - component: {fileID: 4325223994377832651}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -310,7 +325,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -156575501
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1694175734, guid: a984559cf3b9da74fab828a8874b305c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -459,3 +474,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0.035152078, y: -0.7730448}
   m_Size: {x: 0.829098, y: 2.4041238}
   m_Direction: 0
+--- !u!114 &4325223994377832651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473054888025512055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344db7e7bf0ebe741a6fa6573af81251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  iFramesDuration: 0.1
+  numberOfFlashes: 10
+  components: []
