@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2577818301179555306}
   m_Layer: 0
-  m_Name: LandDrone
+  m_Name: FlyingDrone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 5911940173821716560}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.245, y: 0, z: 0}
+  m_LocalPosition: {x: -4.245, y: 1.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -127,7 +127,7 @@ Transform:
   m_GameObject: {fileID: 8061697174505271548}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -175,7 +175,7 @@ Animator:
   m_GameObject: {fileID: 8061697174505271548}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eacd63df6503cff4d886a167213af9b0, type: 2}
+  m_Controller: {fileID: 22100000, guid: 0ed8a83f34ed12645aad01ce288725ff, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -227,7 +227,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1162546119, guid: 1283a3178c1efcf41aabaf24b0364895, type: 3}
+  m_Sprite: {fileID: 777091906, guid: 8acecfb4ae5314f4fb512941d460799f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -283,7 +283,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.29929242, y: -0.34418568}
+  m_Offset: {x: -0.27701858, y: -0.026788086}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -294,5 +294,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.90141517, y: 0.81162864}
+  m_Size: {x: 0.76777476, y: 0.75594455}
   m_EdgeRadius: 0

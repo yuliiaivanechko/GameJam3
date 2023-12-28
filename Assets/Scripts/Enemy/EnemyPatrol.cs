@@ -17,10 +17,12 @@ public class EnemyPatrol: MonoBehaviour
     private float idleTimer;
 
     private bool movingLeft;
+    private Animator _animator;
 
     private void Start()
     {
         movingLeft = false;
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -52,6 +54,7 @@ public class EnemyPatrol: MonoBehaviour
     private void DirectionChange()
     {
         idleTimer += Time.deltaTime;
+        _animator.SetBool("isWalking", false);
 
         if (idleTimer > idleDuration)
         {
@@ -60,6 +63,7 @@ public class EnemyPatrol: MonoBehaviour
             oldScale.x *= -1;
             transform.localScale = oldScale;
             idleTimer = 0;
+            _animator.SetBool("isWalking", true);
         }
     }
 
@@ -70,5 +74,13 @@ public class EnemyPatrol: MonoBehaviour
 
         oldPosition += deltaTime * speed * directionVector;
         transform.position = oldPosition;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Vector3 center = 0.5f * (leftEdge.position + rightEdge.position);
+        Vector3 size = (leftEdge.position - rightEdge.position) + new Vector3(0.5f, 0.5f, 0);
+        Gizmos.DrawWireCube(center, size);
     }
 }
