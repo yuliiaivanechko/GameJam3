@@ -49,6 +49,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private LayerMask _wallLayer;
 
+    [SerializeField]
+    private AudioSource _hit;
+
+    [SerializeField]
+    private AudioSource _damage;
+
+    [SerializeField]
+    private AudioSource _death;
+
     private static readonly int IsMoving = Animator.StringToHash("IsMoving");
     private static readonly int Jump = Animator.StringToHash("Jump");
     private static readonly int Dash = Animator.StringToHash("Dash");
@@ -104,6 +113,7 @@ public class PlayerController : MonoBehaviour
 
         if (_health.IsDead)
         {
+            _death.Play();
             _state = PlayerState.Locked;
             return;
         }
@@ -265,7 +275,7 @@ public class PlayerController : MonoBehaviour
         {
             _activeEnemies.Add(enemy);
             _health.TakeDamage(enemy.Damage);
-
+            _damage.Play();
         }
 
     }
@@ -353,6 +363,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetTrigger(Attack);
         _animator.SetInteger(AttackType, _attackType);
         _attackType = (_attackType + 1) % AttackTypesAmount;
+        _hit.Play();
     }
 
     private void OnInteract()
