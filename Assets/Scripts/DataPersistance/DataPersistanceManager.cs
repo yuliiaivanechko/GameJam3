@@ -49,6 +49,11 @@ public class DataPersistanceManager : MonoBehaviour
         LoadGame(prevScene);
     }
 
+    public GameData GetData()
+    {
+        return gameData;
+    }
+
     public void OnSceneUnloaded(Scene scene)
     {
         prevScene = scene.name;
