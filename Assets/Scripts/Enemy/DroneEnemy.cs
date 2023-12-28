@@ -19,14 +19,14 @@ public class Enemy : MonoBehaviour
 
 
     private Animator anim;
-    // to modify when health system would be completed
-    private int playerHealth;
-    //  private EnemyPatrol enemyPatrol;
+    
+    private Health playerHealth;
+    private EnemyPatrol enemyPatrol;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-       // enemyPatrol = GetComponentInParent<EnemyPatrol>();
+        enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
 
     private void Update()
@@ -43,8 +43,8 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        // if (enemyPatrol != null)
-        //  enemyPatrol.enabled = !PlayerInSight();
+         if (enemyPatrol != null)
+          enemyPatrol.enabled = !PlayerInSight();
     }
 
     private bool PlayerInSight()
@@ -54,8 +54,8 @@ public class Enemy : MonoBehaviour
             new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
             0, Vector2.left, 0, playerLayer);
 
-             //  if (hit.collider != null)
-        //       playerHealth = hit.transform.GetComponent<Health>();
+              if (hit.collider != null)
+                playerHealth = hit.transform.GetComponent<Health>();
 
         return hit.collider != null;
     }
@@ -68,8 +68,8 @@ public class Enemy : MonoBehaviour
 
     private void DamagePlayer()
     {
-       // if (PlayerInSight())
-       //     playerHealth.TakeDamage(damage);
+        if (PlayerInSight())
+            playerHealth.TakeDamage(damage);
     }
 }
 
