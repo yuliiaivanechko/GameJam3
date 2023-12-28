@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6588061543293332838}
   - component: {fileID: 3359878129508349419}
   - component: {fileID: 5573090960785706594}
-  - component: {fileID: 2405821723058689654}
+  - component: {fileID: 8628748406435683793}
   m_Layer: 0
   m_Name: WallClimb
   m_TagString: Wall
@@ -121,7 +121,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.007556036, y: 0}
   m_Size: {x: 0.30488792, y: 0.32}
   m_Direction: 0
---- !u!114 &2405821723058689654
+--- !u!114 &8628748406435683793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,6 +130,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7870508787347525178}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58ee9d3348924c847bef401deca10d4e, type: 3}
+  m_Script: {fileID: 11500000, guid: cadae96a9078ce4419359f97bd6b525d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

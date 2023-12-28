@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3203041283287433025}
   - component: {fileID: 9116711383055197181}
   - component: {fileID: 7309227106597409928}
-  - component: {fileID: 122589358726467999}
+  - component: {fileID: 2761138723864956253}
   m_Layer: 0
   m_Name: Dash
   m_TagString: Dash
@@ -121,7 +121,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.022668913, y: -0.0226686}
   m_Size: {x: 0.27466217, y: 0.2746628}
   m_Direction: 0
---- !u!114 &122589358726467999
+--- !u!114 &2761138723864956253
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
