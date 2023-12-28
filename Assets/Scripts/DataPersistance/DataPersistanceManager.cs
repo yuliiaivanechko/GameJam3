@@ -56,6 +56,7 @@ public class DataPersistanceManager : MonoBehaviour
 
     public void NewGame()
     {
+        Debug.Log("new data");
         this.gameData = new GameData();
     }
 
@@ -65,7 +66,7 @@ public class DataPersistanceManager : MonoBehaviour
         if (this.gameData == null)
         {
             Debug.Log("No data 3was found.");
-            return;
+            this.gameData = new GameData();
         }
 
         foreach (IDataPersistance dataPeristanceObj in dataPersistanceObjects)

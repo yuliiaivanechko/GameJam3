@@ -26,7 +26,6 @@ public class MainMenu : MonoBehaviour
 
     public void OnNewGameClicked()
     {
-        Debug.Log("new");
         DataPersistanceManager.instance.NewGame();
         SceneManager.LoadSceneAsync(1);
     }
