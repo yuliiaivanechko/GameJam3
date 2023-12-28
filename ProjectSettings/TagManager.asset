@@ -7,6 +7,7 @@ TagManager:
   - Dash
   - Wall
   - DoubleJump
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Wall
   - Player
   - Background
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -52,6 +53,9 @@ TagManager:
     locked: 0
   - name: Abilities
     uniqueID: 4058921217
+    locked: 0
+  - name: Enemy
+    uniqueID: 1679409045
     locked: 0
   - name: Player
     uniqueID: 4138391795
