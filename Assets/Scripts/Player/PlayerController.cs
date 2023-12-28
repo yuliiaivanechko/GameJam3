@@ -68,8 +68,10 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
     private Animator _animator;
+    private Health _health;
 
     private HashSet<IInteractable> _activeInteracts;
+    private HashSet<Enemy> _activeEnemies;
 
     // Start is called before the first frame update
     private void Start()
@@ -85,6 +87,8 @@ public class PlayerController : MonoBehaviour
         _state = PlayerState.Idle;
         _attackType = 0;
         _activeInteracts = new HashSet<IInteractable>();
+        _activeEnemies = new HashSet<Enemy>();
+        _health = GetComponent<Health>();
 
     }
 
@@ -95,6 +99,8 @@ public class PlayerController : MonoBehaviour
             _rigidbody.velocity = Vector2.zero;
             return;
         }
+
+        TrackEnemyDamage();
 
         float speedMultiplier = 1.0f;
         float velocityY = _rigidbody.velocity.y;
@@ -149,6 +155,15 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
+    private void TrackEnemyDamage()
+    {
+        foreach (Enemy enemy in _activeEnemies)
+        {
+            _health.TakeDamage(enemy.Damage);
+        }
+
+        _activeEnemies.RemoveWhere(enemy => !enemy.isActiveAndEnabled || enemy.IsDead);
+    }
     private void UpdateMovingState()
     {
         if (_state == PlayerState.Dash || _state == PlayerState.WallJump)
@@ -228,6 +243,7 @@ public class PlayerController : MonoBehaviour
         if (interactable != null)
         {
             _activeInteracts.Add(interactable);
+            return;
         }
 
         SceneChanger sceneChanger = collision.GetComponent<SceneChanger>();
@@ -235,7 +251,17 @@ public class PlayerController : MonoBehaviour
         {
             sceneChanger.ChangeScene();
             _state = PlayerState.Locked;
+            return;
         }
+
+        Enemy enemy = collision.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            _activeEnemies.Add(enemy);
+            _health.TakeDamage(enemy.Damage);
+
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -246,6 +272,11 @@ public class PlayerController : MonoBehaviour
             _activeInteracts.Remove(interactable);
         }
 
+        Enemy enemy = collision.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            _activeEnemies.Remove(enemy);
+        }
     }
 
     private void OnMove(InputValue value)
