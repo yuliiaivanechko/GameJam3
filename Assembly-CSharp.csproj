@@ -72,10 +72,13 @@
     <Compile Include="Assets\Scripts\DataPersistance\FileDataHandler.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Player\Sword.cs" />
+    <Compile Include="Assets\Scripts\Enemy\RobotBoss.cs" />
     <Compile Include="Assets\Scripts\Enemy\DroneEnemy.cs" />
     <Compile Include="Assets\Scripts\DataPersistance\SerializableTypes\SerializableDictionary.cs" />
     <Compile Include="Assets\Scripts\SceneChangers\SavePoint.cs" />
+    <Compile Include="Assets\Scripts\Menu\Volume.cs" />
     <Compile Include="Assets\Scripts\Health\PlayerHealth.cs" />
+    <Compile Include="Assets\Scripts\Enemy\BossManager.cs" />
     <Compile Include="Assets\Scripts\Health\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Menu\Slider.cs" />
     <Compile Include="Assets\Scripts\Animals\CatRed.cs" />

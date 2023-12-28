@@ -26,4 +26,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Industrial/save_zone.unity
     guid: 180a2c2cc4e83324fbc971c3bff5456b
+  - enabled: 1
+    path: Assets/Scenes/Tutorial/Tutor_0.unity
+    guid: 2f783efe92e88aa479718670af2688db
+  - enabled: 1
+    path: Assets/Scenes/Tutorial/Tutor_Boss.unity
+    guid: 12d9c1461633d964faba3515ce4840f8
+  - enabled: 1
+    path: Assets/Scenes/Tutorial/Tutor_Fighting.unity
+    guid: d7c5522d0cb5fc64c83baf2539b995f9
+  - enabled: 1
+    path: Assets/Scenes/Tutorial/Tutor_Movement.unity
+    guid: e5c7efdeac512c6489a763781ae4e370
   m_configObjects: {}

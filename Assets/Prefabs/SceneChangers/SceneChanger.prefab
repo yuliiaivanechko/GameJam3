@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc8ca18b6caafb84b982ad4734ee1776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: MainMenu
-  _canvasAnimator: {fileID: 0}
+  _sceneName: 
+  _canvasAnimator: {fileID: 756914374265732996, guid: 6ca6ab09345a4da479d328be9336d9f1, type: 3}
 --- !u!61 &2265511586954254281
 BoxCollider2D:
   m_ObjectHideFlags: 0
