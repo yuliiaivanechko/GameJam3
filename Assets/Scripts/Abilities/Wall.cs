@@ -32,5 +32,7 @@ public class Wall : MonoBehaviour, IDataPersistance
             visual.gameObject.SetActive(false);
             this.wall = true;
         }
+        GameData data = DataPersistanceManager.instance.GetData();
+        data.wall = this.wall;
     }
 }

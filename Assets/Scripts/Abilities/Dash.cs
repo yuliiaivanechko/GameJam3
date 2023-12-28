@@ -31,5 +31,7 @@ public class Dash : MonoBehaviour, IDataPersistance
             visual.gameObject.SetActive(false);
             this.dash = true;
         }
+        GameData data = DataPersistanceManager.instance.GetData();
+        data.dash = this.dash;
     }
 }

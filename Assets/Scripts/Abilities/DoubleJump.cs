@@ -31,5 +31,7 @@ public class DoubleJump : MonoBehaviour, IDataPersistance
             visual.gameObject.SetActive(false);
             this.doubleJump = true;
         }
+        GameData data = DataPersistanceManager.instance.GetData();
+        data.doubleJump = this.doubleJump;
     }
 }
