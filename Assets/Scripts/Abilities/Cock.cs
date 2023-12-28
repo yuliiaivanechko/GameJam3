@@ -49,6 +49,12 @@ public class Cock : MonoBehaviour, IDataPersistance
             coco.Play();
             StartCoroutine(WaitForCollecting());
             collected = true;
+            GameData data = DataPersistanceManager.instance.GetData();
+            if (data.cocksCollected.ContainsKey(id))
+            {
+                data.cocksCollected.Remove(id);
+            }
+            data.cocksCollected.Add(id, collected);
         }
     }
 
