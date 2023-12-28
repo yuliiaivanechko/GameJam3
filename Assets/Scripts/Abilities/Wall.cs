@@ -16,8 +16,11 @@ public class Wall : MonoBehaviour, IDataPersistance
 
     public void LoadData(GameData data, string prevScene)
     {
+        if (data.wall)
+        {
+            visual.gameObject.SetActive(false);
+        }
         this.wall = data.wall;
-
     }
 
     public void SaveData(ref GameData data)

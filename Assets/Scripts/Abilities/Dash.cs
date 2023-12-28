@@ -16,6 +16,10 @@ public class Dash : MonoBehaviour, IDataPersistance
 
     public void LoadData(GameData data, string prevScene)
     {
+        if (data.dash)
+        {
+            visual.gameObject.SetActive(false);
+        }
         this.dash = data.dash;
     }
 
