@@ -12,6 +12,12 @@ public class Cat : MonoBehaviour, IDataPersistance
     [SerializeField] private string id;
     private SpriteRenderer visual;
 
+    [SerializeField]
+    private AudioSource meaw;
+
+    [SerializeField]
+    private AudioSource death;
+
     [ContextMenu("Generate guid for id")]
     private void GenerateGuid()
     {
@@ -66,6 +72,7 @@ public class Cat : MonoBehaviour, IDataPersistance
 
     void FlipCatFacing()
     {
+        meaw.Play();
         // Flip the cat's direction based on the velocity
         if (myRigidbody.velocity.x > 0.1f)
         {
@@ -88,6 +95,7 @@ public class Cat : MonoBehaviour, IDataPersistance
             if (catAnimator != null)
             {
                 catAnimator.SetTrigger("Death");
+                death.Play();
                 killed = true;
                 StartCoroutine(WaitForDeathAnimation());
             }
@@ -97,7 +105,7 @@ public class Cat : MonoBehaviour, IDataPersistance
     IEnumerator WaitForDeathAnimation()
     {
         // Wait for the duration of the "Death" animation
-        yield return new WaitForSeconds(catAnimator.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(1);
 
         // Destroy the cat GameObject after the animation finishes
         visual.gameObject.SetActive(false);

@@ -15,7 +15,8 @@ public class Cock : MonoBehaviour, IDataPersistance
     private SpriteRenderer visual;
     private bool collected = false;
 
-
+    [SerializeField]
+    private AudioSource coco;
 
     private void Awake()
     {
@@ -45,24 +46,26 @@ public class Cock : MonoBehaviour, IDataPersistance
         Debug.Log("Shut up chicken");
         if (!collected)
         {
-            CollectCock();
+            coco.Play();
+            StartCoroutine(WaitForCollecting());
+            collected = true;
+            GameData data = DataPersistanceManager.instance.GetData();
+            if (data.cocksCollected.ContainsKey(id))
+            {
+                data.cocksCollected.Remove(id);
+            }
+            data.cocksCollected.Add(id, collected);
         }
     }
 
-    void Start()
-    {
-        
-    }
 
-    void CollectCock()
+    IEnumerator WaitForCollecting()
     {
-        collected = true;
+        // Wait for the duration of the "Death" animation
+        yield return new WaitForSeconds(3);
+
+        // Destroy the cat GameObject after the animation finishes
         visual.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
