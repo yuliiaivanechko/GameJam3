@@ -16,6 +16,10 @@ public class DoubleJump : MonoBehaviour, IDataPersistance
 
     public void LoadData(GameData data, string prevScene)
     {
+        if (data.doubleJump)
+        {
+            visual.gameObject.SetActive(false);
+        }
         this.doubleJump = data.doubleJump;
     }
 

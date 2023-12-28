@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5251686759086071903}
   - component: {fileID: 3662769291680427501}
   - component: {fileID: 8763104108796935158}
-  - component: {fileID: 1941431577143784013}
+  - component: {fileID: 1444459651212876176}
   m_Layer: 0
   m_Name: DoubleJump
   m_TagString: DoubleJump
@@ -121,7 +121,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.32, y: 0.32}
   m_Direction: 0
---- !u!114 &1941431577143784013
+--- !u!114 &1444459651212876176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,6 +130,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4020860547904632466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58ee9d3348924c847bef401deca10d4e, type: 3}
+  m_Script: {fileID: 11500000, guid: b33fbb579f1ebb346a216acef31e9f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
