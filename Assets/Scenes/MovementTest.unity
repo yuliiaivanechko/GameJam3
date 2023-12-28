@@ -412,6 +412,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8887790791977749194, guid: f870a99b0b00f5d4cb55b45b1a9063d4, type: 3}
   m_PrefabInstance: {fileID: 1520727839}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1474836544
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2018475006417769154, guid: 050275f3471cd7449ac683181f97e8d5, type: 3}
+      propertyPath: m_Name
+      value: Hammer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2636451705912814259, guid: 050275f3471cd7449ac683181f97e8d5, type: 3}
+      propertyPath: Damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165980470800453707, guid: 050275f3471cd7449ac683181f97e8d5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165980470800453707, guid: 050275f3471cd7449ac683181f97e8d5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165980470800453707, guid: 050275f3471cd7449ac683181f97e8d5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.012682931
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165980470800453707, guid: 050275f3471cd7449ac683181f97e8d5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165980470800453707, guid: 050275f3471cd7449ac683181f97e8d5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165980470800453707, guid: 050275f3471cd7449ac683181f97e8d5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165980470800453707, guid: 050275f3471cd7449ac683181f97e8d5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165980470800453707, guid: 050275f3471cd7449ac683181f97e8d5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165980470800453707, guid: 050275f3471cd7449ac683181f97e8d5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165980470800453707, guid: 050275f3471cd7449ac683181f97e8d5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 050275f3471cd7449ac683181f97e8d5, type: 3}
 --- !u!1 &1500045367
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,9 +696,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 360011714585991287, guid: b6b43ce20e835e44ba8d2b1a9a856c95, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 360011714585991287, guid: b6b43ce20e835e44ba8d2b1a9a856c95, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 360011714585991287, guid: b6b43ce20e835e44ba8d2b1a9a856c95, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 2577818301179555306, guid: b6b43ce20e835e44ba8d2b1a9a856c95, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7109602
+      value: 4.61
       objectReference: {fileID: 0}
     - target: {fileID: 2577818301179555306, guid: b6b43ce20e835e44ba8d2b1a9a856c95, type: 3}
       propertyPath: m_LocalPosition.y
@@ -693,7 +766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5935286787594594948, guid: b6b43ce20e835e44ba8d2b1a9a856c95, type: 3}
       propertyPath: components.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -710,3 +783,4 @@ SceneRoots:
   - {fileID: 329086391}
   - {fileID: 462359580}
   - {fileID: 3450065150096978895}
+  - {fileID: 1474836544}
