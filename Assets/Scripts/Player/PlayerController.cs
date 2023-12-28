@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
         Idle, 
         Move, 
         Dash,
-        WallJump
+        WallJump,
+        Locked
     }
 
     public enum PlayerAbilities
@@ -41,9 +42,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private Collider2D _bottomCollider;
-
-    [SerializeField]
-    private LayerMask _groundLayer;
 
     [SerializeField]
     private Collider2D _sidesCollider;
@@ -80,7 +78,7 @@ public class PlayerController : MonoBehaviour
         _horizontalInput = 0.0f;
         _jumpsLeft = 1;
         _dashesLeft = 1;
-        _isOnGround = _bottomCollider.IsTouchingLayers(_groundLayer);
+        _isOnGround = _bottomCollider.IsTouchingLayers(_wallLayer);
         _animator = GetComponent<Animator>();
         _dashTime = 0.0f;
         _wallJumpTime = 0.0f;
@@ -92,6 +90,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_state == PlayerState.Locked)
+        {
+            _rigidbody.velocity = Vector2.zero;
+            return;
+        }
+
         float speedMultiplier = 1.0f;
         float velocityY = _rigidbody.velocity.y;
         if (_state == PlayerState.Dash)
@@ -149,7 +153,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateJumpState()
     {
-        _isOnGround = _bottomCollider.IsTouchingLayers(_groundLayer);
+        _isOnGround = _bottomCollider.IsTouchingLayers(_wallLayer);
         if (_isOnGround)
         {
             _jumpsLeft = 1;
@@ -210,6 +214,13 @@ public class PlayerController : MonoBehaviour
         {
             _activeInteracts.Add(interactable);
         }
+
+        SceneChanger sceneChanger = collision.GetComponent<SceneChanger>();
+        if (sceneChanger != null && _state != PlayerState.Locked)
+        {
+            sceneChanger.ChangeScene();
+            _state = PlayerState.Locked;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -220,11 +231,6 @@ public class PlayerController : MonoBehaviour
             _activeInteracts.Remove(interactable);
         }
 
-        SceneChanger sceneChanger = collision.GetComponent<SceneChanger>();
-        if (sceneChanger != null)
-        {
-            sceneChanger.ChangeScene();
-        }
     }
 
     private void OnMove(InputValue value)

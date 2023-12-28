@@ -11,7 +11,6 @@ public class GameData
     public bool wall = false;
     public bool doubleJump = false;
     public string sceneName;
-    public string prevScene;
 
     public GameData()
     {
@@ -20,8 +19,7 @@ public class GameData
         this.doubleJump = false;
         this.dash = false;
         this.wall = false;
-        sceneName = null;
-        prevScene = null;
+        sceneName = "Level_1";
     }
 
 }

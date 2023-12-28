@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 4522013200777311944}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -310,7 +310,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -156575501
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1694175734, guid: a984559cf3b9da74fab828a8874b305c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -399,9 +399,6 @@ MonoBehaviour:
   _wallJumpDuration: 0.2
   _comboMaxDelay: 0.5
   _bottomCollider: {fileID: 562070422329241603}
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
   _sidesCollider: {fileID: 535267635595203787}
   _wallLayer:
     serializedVersion: 2
