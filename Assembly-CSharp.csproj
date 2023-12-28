@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\FearSystem\FearEntity.cs" />
     <Compile Include="Assets\Scripts\Abilities\DoubleJump.cs" />
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Enemy\ChasingEnemy.cs" />
     <Compile Include="Assets\Scripts\DataPersistance\IDataPersistance.cs" />
     <Compile Include="Assets\Scripts\SceneChangers\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\Enemy\HammerMovement.cs" />
@@ -69,10 +70,15 @@
     <Compile Include="Assets\Scripts\Abilities\Dash.cs" />
     <Compile Include="Assets\Scripts\Abilities\Cock.cs" />
     <Compile Include="Assets\Scripts\DataPersistance\FileDataHandler.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Player\Sword.cs" />
     <Compile Include="Assets\Scripts\Enemy\DroneEnemy.cs" />
     <Compile Include="Assets\Scripts\DataPersistance\SerializableTypes\SerializableDictionary.cs" />
     <Compile Include="Assets\Scripts\SceneChangers\SavePoint.cs" />
+    <Compile Include="Assets\Scripts\Health\PlayerHealth.cs" />
+    <Compile Include="Assets\Scripts\Health\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Menu\Slider.cs" />
+    <Compile Include="Assets\Scripts\Animals\CatRed.cs" />
     <Compile Include="Assets\Scripts\DataPersistance\DataPersistanceManager.cs" />
     <Compile Include="Assets\Scripts\FearSystem\FearController.cs" />
     <Compile Include="Assets\Scripts\SceneChangers\SpawnPointsManager.cs" />
@@ -89,7 +95,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Art\industrial-zone-tileset-pixel-art\license.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Electronic Music Pack\Read me.txt" />
+    <None Include="Assets\Sounds\Electronic Music Pack\Read me.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
