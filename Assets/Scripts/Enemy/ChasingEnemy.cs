@@ -13,9 +13,20 @@ public class ChasingEnemy : MonoBehaviour
     private PlayerHealth _toChase;
     private Animator _animator;
 
+    private PlayerHealth ToChase
+    {
+        get
+        {
+            if (_toChase == null)
+            {
+                _toChase = FindAnyObjectByType<PlayerHealth>();
+            }
+            return _toChase;
+        }
+    }
+
     void Start()
     {
-        _toChase = FindAnyObjectByType<PlayerHealth>();
         _animator = GetComponent<Animator>();
         _animator.SetBool("isWalking", true);
     }
@@ -23,17 +34,17 @@ public class ChasingEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_toChase.IsDead)
+        if (ToChase?.IsDead ?? true)
         {
             return;
         }
 
         Vector3 currentPosition = transform.position;
-        Vector3 direction = (_toChase.transform.position - currentPosition).normalized;
+        Vector3 direction = (ToChase.transform.position - currentPosition).normalized;
         currentPosition += _speed * Time.deltaTime * direction;
         transform.position = currentPosition;
 
-        if ((_toChase.transform.position - transform.position).magnitude < _attackAnimationRange)
+        if ((ToChase.transform.position - transform.position).magnitude < _attackAnimationRange)
         {
             _animator.SetTrigger("Attack");
         }

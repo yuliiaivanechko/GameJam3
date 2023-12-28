@@ -105,6 +105,7 @@ public class PlayerController : MonoBehaviour
         if (_health.IsDead)
         {
             _state = PlayerState.Locked;
+            
             return;
         }
 

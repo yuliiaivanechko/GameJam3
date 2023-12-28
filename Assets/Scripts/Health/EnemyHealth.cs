@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class EnemyHealth : Health
 {
+
+    private float _currentHealth;
     
-    protected override void Awake()
+    protected void Start()
     {
-        base.Awake();
         ResetHealth();
+    }
+
+    protected override float GetCurrentHealth()
+    {
+        return _currentHealth;
+    }
+
+    protected override void SetCurrentHealth(float health)
+    {
+        _currentHealth = health;
     }
 
 }

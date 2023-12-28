@@ -35,7 +35,7 @@ public class Health : MonoBehaviour
 
     private bool invulnerable;
 
-    protected virtual void Awake()
+    protected void Awake()
     {
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
