@@ -131,7 +131,22 @@ public class PlayerController : MonoBehaviour
 
     private bool IsAbilityUnlocked(PlayerAbilities ability)
     {
-        return true;
+        GameData data = DataPersistanceManager.instance.GetData();
+        Debug.Log(ability);
+        Debug.Log(data.dash);
+        if (ability == PlayerAbilities.Dash)
+        {
+            return data.dash;
+        }
+        if (ability == PlayerAbilities.WallJump)
+        {
+            return data.wall;
+        }
+        if (ability == PlayerAbilities.DoubleJump)
+        {
+            return data.doubleJump;
+        }
+        return false;
     }
 
     private void UpdateMovingState()
