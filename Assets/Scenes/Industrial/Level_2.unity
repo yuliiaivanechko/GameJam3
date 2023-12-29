@@ -441,6 +441,7 @@ GameObject:
   - component: {fileID: 751197154}
   - component: {fileID: 751197153}
   - component: {fileID: 751197152}
+  - component: {fileID: 751197155}
   m_Layer: 7
   m_Name: Cockwall
   m_TagString: Untagged
@@ -760,6 +761,20 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &751197155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751197150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25d8b6c2740c994d956b926682016d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virtualCamera: {fileID: 2117324447}
+  newConfiner: {fileID: 712378939}
 --- !u!1001 &956596132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6323,11 +6338,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1879382264714627149, guid: 1a1df35d0237a9547a5a86b1d69ddc79, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.6
+      value: -1.6
       objectReference: {fileID: 0}
     - target: {fileID: 1879382264714627149, guid: 1a1df35d0237a9547a5a86b1d69ddc79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 1879382264714627149, guid: 1a1df35d0237a9547a5a86b1d69ddc79, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6380,11 +6395,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 591826297824178999, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.6
+      value: -1.6
       objectReference: {fileID: 0}
     - target: {fileID: 591826297824178999, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 591826297824178999, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6439,6 +6454,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
+--- !u!114 &2117324447 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2448803572209413925, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
+  m_PrefabInstance: {fileID: 2117324446}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
