@@ -11,33 +11,41 @@ public class InventoryManager : MonoBehaviour
     public GameObject DoubleJump;
     public GameObject Cock;
     public GameObject WallClimb;
+   
     void Start()
     {
-        Dash.SetActive(false);
-        DoubleJump.SetActive(false);
-        WallClimb.SetActive(false);
+        gameData = DataPersistanceManager.instance.GetData();
+        if (gameData.dash)
+            Dash.SetActive(true);
+        else { Dash.SetActive(false); }
+        if (gameData.doubleJump)
+            DoubleJump.SetActive(true);
+        else { DoubleJump.SetActive(false); }
+        if (gameData.wall)
+            WallClimb.SetActive(true);
+        else { WallClimb.SetActive(false); }
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
+
     int getCockNumber()
     {
         int count = 0;
-      /*  if (gameData.cocksCollected != null)
+        if (gameData.cocksCollected != null)
         {
 
-            for (int index = 0; index < gameData.cocksCollected.Count; index++)
+            for (int i = 0; i < gameData.cocksCollected.values.Count; i++)
             {
-                bool itemValue = gameData.cocksCollected[index].Value;
-                var item = gameData.cocksCollected[index];
-                bool itemValue = item.Value;
-                if (itemValue == true)
+                if (gameData.cocksCollected.values[i])
+                {
                     count++;
+                }
             }
-        }*/
+        }
         return count;
     }
 }
