@@ -191,6 +191,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &796941987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 741720210584320793, guid: e292c074277084a42a65b9d7c5a389c4, type: 3}
+  m_PrefabInstance: {fileID: 3283300712010939632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &796941992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796941987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ffcd732308fb8409f2bf14575cd3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1344513727
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +300,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1348097743 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1268061215969850680, guid: e292c074277084a42a65b9d7c5a389c4, type: 3}
+  m_PrefabInstance: {fileID: 3283300712010939632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1348097745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348097743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83a77be60e725943bfdc93a5bb210fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData:
+    xp: 100
+    cocksCollected:
+      keys: []
+      values: 
+    catsKilled:
+      keys: []
+      values: 
+    dash: 0
+    wall: 0
+    doubleJump: 0
+    sceneName: Level_1
+  Dash: {fileID: 0}
+  DoubleJump: {fileID: 0}
+  Cock: {fileID: 0}
+  WallClimb: {fileID: 0}
 --- !u!1001 &2007546234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -432,6 +482,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5223991831335806416, guid: e292c074277084a42a65b9d7c5a389c4, type: 3}
+      propertyPath: m_text
+      value: Dash
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217452457918188237, guid: e292c074277084a42a65b9d7c5a389c4, type: 3}
+      propertyPath: m_text
+      value: Double Jump
+      objectReference: {fileID: 0}
     - target: {fileID: 8602500798343508787, guid: e292c074277084a42a65b9d7c5a389c4, type: 3}
       propertyPath: m_VerticalScrollbar
       value: 
@@ -443,7 +501,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 741720210584320793, guid: e292c074277084a42a65b9d7c5a389c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 796941992}
+    - targetCorrespondingSourceObject: {fileID: 1268061215969850680, guid: e292c074277084a42a65b9d7c5a389c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1348097745}
   m_SourcePrefab: {fileID: 100100000, guid: e292c074277084a42a65b9d7c5a389c4, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
