@@ -30,17 +30,21 @@ public class SpawnPointsManager : MonoBehaviour, IDataPersistance
     {
         int _sceneIndex = _previousScenes.FindIndex((name) => name == prevScene);
         Vector3 pos;
+        Quaternion rotation;
         if (_sceneIndex != -1)
         {
             pos = _spawnPoints[_sceneIndex].position;
-            pos.y += _YspawnDelta;
+            rotation = _spawnPoints[_sceneIndex].rotation;
+
         }
         else
         {
             pos = _defaultSpawnPoint?.position ?? new Vector3(0.0f, 0.0f);
+            rotation = _defaultSpawnPoint.rotation;
         }
+        pos.y += _YspawnDelta;
 
-        GameObject obj = Instantiate(_playerPrefab, pos, _spawnPoints[_sceneIndex].rotation);
+        GameObject obj = Instantiate(_playerPrefab, pos, rotation);
         var virtualCamera = FindAnyObjectByType<CinemachineVirtualCamera>();
         virtualCamera.Follow = obj.transform;
     }
