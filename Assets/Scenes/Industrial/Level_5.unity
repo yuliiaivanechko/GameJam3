@@ -172,6 +172,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4375539043932952355, guid: da83d710248d4b448adf30d025be5562, type: 3}
+      propertyPath: _defaultSpawnPoint
+      value: 
+      objectReference: {fileID: 1482178182}
+    - target: {fileID: 4375539043932952355, guid: da83d710248d4b448adf30d025be5562, type: 3}
       propertyPath: _spawnPoints.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -7349,8 +7353,11 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 0.48228836, y: 4.872684}
       - {x: -25.007168, y: 4.7212486}
-      - {x: -25.424673, y: -9.587287}
-      - {x: 29.168737, y: -9.477345}
+      - {x: -24.933916, y: -8.789807}
+      - {x: 2.6966248, y: -8.549018}
+      - {x: 20.541069, y: -8.608681}
+      - {x: 20.82436, y: -8.609628}
+      - {x: 29.098734, y: -8.637293}
       - {x: 28.932049, y: 4.6783805}
   m_UseDelaunayMesh: 0
 --- !u!4 &1375259088
