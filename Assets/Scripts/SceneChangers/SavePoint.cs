@@ -20,6 +20,8 @@ public class SavePoint : MonoBehaviour, IDataPersistance, IInteractable
     public void Interact(GameObject player)
     {
         DataPersistanceManager.instance.SaveGame();
+        player.GetComponent<Health>().ResetHealth();
+        player.GetComponent<FearController>().ResetKilledEnemies();
         StartCoroutine(LoadSceneAFterTransition());
     }
 

@@ -97,6 +97,7 @@ public class FearController : MonoBehaviour
     public void ResetKilledEnemies()
     {
         FearData.ResetKilledEnemies();
+        FearData.SetFearLevel(0);
     }
 
     private void UpdateFearLevelAfterEntering()
