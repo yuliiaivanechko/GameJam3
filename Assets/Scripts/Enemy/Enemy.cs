@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     public void Start()
     {
         _health = GetComponent<Health>();
-        _fearController = GetComponentInParent<FearController>();
+        _fearController = FindObjectOfType<FearController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -57,7 +57,6 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         _fearController?.TrackKilledEnemy(gameObject);
-        Destroy(gameObject);
     }
 
 }

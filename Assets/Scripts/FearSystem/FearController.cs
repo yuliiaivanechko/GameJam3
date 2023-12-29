@@ -86,6 +86,7 @@ public class FearController : MonoBehaviour
         if (entity != null)
         {
             FearData.TrackKilledEnemy(sceneName, entity.ID);
+            UpdateEntitiesBasedOnFearLevel();
         }
     }
 
