@@ -56,9 +56,12 @@ public class FearController : MonoBehaviour
         }
     }
 
+    private Enemy[] _enemies;
+
     // Start is called before the first frame update
     private void Start()
     {
+        _enemies = FindObjectsOfType<Enemy>();
         SetInitialIDS();
         UpdateFearLevelAfterEntering();
         UpdateEntitiesBasedOnFearLevel();
@@ -79,20 +82,16 @@ public class FearController : MonoBehaviour
     public void TrackKilledEnemy(GameObject gameObject)
     {
         string sceneName = SceneManager.GetActiveScene().name;
-        FearEntity entity = gameObject.GetComponent<FearEntity>();
+        Enemy entity = gameObject.GetComponent<Enemy>();
         if (entity != null)
         {
             FearData.TrackKilledEnemy(sceneName, entity.ID);
         }
     }
 
-    public void HitPlayer(GameObject gameObject)
+    public void HitPlayer()
     {
-        FearEntity entity = gameObject.GetComponent<FearEntity>();
-        if (entity != null)
-        {
-            ChangeFearLevel(_fearPerHit);
-        }
+        ChangeFearLevel(_fearPerHit);
     }
 
     public void ResetKilledEnemies()
@@ -108,7 +107,7 @@ public class FearController : MonoBehaviour
         {
             killedEnemies = new HashSet<int>();
         }
-        if (gameObject.GetComponentsInChildren<FearEntity>().Length > killedEnemies.Count)
+        if (_enemies.Length > killedEnemies.Count)
         {
             FearData.ChangeFearLevel(_fearPerScene);
         }
@@ -119,7 +118,7 @@ public class FearController : MonoBehaviour
     private void SetInitialIDS()
     {
         int id = 0;
-        foreach (FearEntity entity in gameObject.GetComponentsInChildren<FearEntity>())
+        foreach (Enemy entity in _enemies)
         {
             entity.ID = id;
             id++;
@@ -135,7 +134,7 @@ public class FearController : MonoBehaviour
         {
             killedEnemies = new HashSet<int>();
         }
-        foreach (FearEntity entity in gameObject.GetComponentsInChildren<FearEntity>())
+        foreach (Enemy entity in _enemies)
         {
             entity.gameObject.SetActive(!killedEnemies.Contains(entity.ID) && fearLevel >= entity.MinFearLevel);
         }

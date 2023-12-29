@@ -5,6 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int Damage;
+    public int ID;
+    public int MinFearLevel;
 
     private Health _health;
     private FearController _fearController;

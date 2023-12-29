@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -78,6 +79,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Animator _animator;
     private Health _health;
+    private FearController _fearController;
 
     private HashSet<IInteractable> _activeInteracts;
     private HashSet<Enemy> _activeEnemies;
@@ -98,6 +100,7 @@ public class PlayerController : MonoBehaviour
         _activeInteracts = new HashSet<IInteractable>();
         _activeEnemies = new HashSet<Enemy>();
         _health = GetComponent<Health>();
+        _fearController = GetComponent<FearController>();
 
     }
 
@@ -115,7 +118,7 @@ public class PlayerController : MonoBehaviour
         {
             _death.Play();
             _state = PlayerState.Locked;
-            
+            StartCoroutine(KillPlayer());
             return;
         }
 
@@ -152,6 +155,26 @@ public class PlayerController : MonoBehaviour
         UpdateComboState(Time.fixedDeltaTime);
     }
 
+    private IEnumerator KillPlayer()
+    {
+        var renderers = GetComponentsInChildren<SpriteRenderer>();
+        for (int i = 10; i >= 0; i--)
+        {
+            foreach (var renderer in renderers)
+            {
+                Color color = renderer.color;
+                color.a = i / 10.0f;
+                renderer.color = color;
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        _health.ResetHealth();
+        _fearController.ResetKilledEnemies();
+        Debug.Log("killed");
+        SceneManager.LoadScene(DataPersistanceManager.instance.gameData?.sceneName ?? "MainMenu");
+    }
+
     private bool IsAbilityUnlocked(PlayerAbilities ability)
     {
         GameData data = DataPersistanceManager.instance.GetData();
@@ -176,7 +199,13 @@ public class PlayerController : MonoBehaviour
     {
         foreach (Enemy enemy in _activeEnemies)
         {
+            float healthBefore = _health.CurrentHealth;
             _health.TakeDamage(enemy.Damage);
+            if (_health.CurrentHealth != healthBefore)
+            {
+                _fearController.HitPlayer();
+                _damage.Play();
+            }
         }
 
         _activeEnemies.RemoveWhere(enemy => !enemy.isActiveAndEnabled || enemy.IsDead);
@@ -275,8 +304,13 @@ public class PlayerController : MonoBehaviour
         if (enemy != null && !enemy.IsDead)
         {
             _activeEnemies.Add(enemy);
+            float healthBefore = _health.CurrentHealth;
             _health.TakeDamage(enemy.Damage);
-            _damage.Play();
+            if (_health.CurrentHealth != healthBefore)
+            {
+                _fearController.HitPlayer();
+                _damage.Play();
+            }
         }
 
     }
