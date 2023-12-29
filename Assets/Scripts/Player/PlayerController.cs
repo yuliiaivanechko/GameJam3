@@ -289,6 +289,7 @@ public class PlayerController : MonoBehaviour
         if (interactable != null)
         {
             _activeInteracts.Add(interactable);
+            interactable.ChangeState(true);
             return;
         }
 
@@ -321,6 +322,7 @@ public class PlayerController : MonoBehaviour
         if (interactable != null)
         {
             _activeInteracts.Remove(interactable);
+            interactable.ChangeState(false);
         }
 
         Enemy enemy = collision.GetComponent<Enemy>();

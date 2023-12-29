@@ -21,7 +21,7 @@ public class SceneChanger : MonoBehaviour
     private IEnumerator LoadSceneAFterTransition()
     {
         _canvasAnimator.SetBool(AnimateOut, true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.2f);
  
         SceneManager.LoadScene(_sceneName);
     }
