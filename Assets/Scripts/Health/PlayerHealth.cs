@@ -14,8 +14,16 @@ public class PlayerHealth : Health
     public Sprite halfHeart;
     public Sprite emptyHeart;
 
+    private void Start()
+    {
+        _health = GetCurrentHealth();
+        SetCurrentHealth(_health);
+    }
+
     protected override float GetCurrentHealth()
     {
+        Debug.Log("Gethealth");
+        UpdateUIHearts();
         if (!_isInited)
         {
             ResetHealth();
@@ -25,12 +33,14 @@ public class PlayerHealth : Health
     }
     protected override void SetCurrentHealth(float value)
     {
+        Debug.Log("Sethealth");
         _health = value;
+        UpdateUIHearts();
     }
     private void UpdateUIHearts() 
     {
         bool isHalfHeartActive = false;
-        if((_health / 10)% 2  == 1)
+        if((_health / 10) % 2  == 1)
         {
             isHalfHeartActive = true;
         }
