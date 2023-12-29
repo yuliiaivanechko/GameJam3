@@ -62,7 +62,9 @@ public class DataPersistanceManager : MonoBehaviour
     public void NewGame()
     {
         Debug.Log("new data");
+        dataHandler.Delete();
         this.gameData = new GameData();
+
     }
 
     public void LoadGame(string prevScene)

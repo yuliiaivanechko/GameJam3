@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7da4c004bc9f3a468ab8d810786492f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: 1
+  _sceneName: MainMenu
   _canvasAnimator: {fileID: 1082524574}
 --- !u!1001 &1360403310
 PrefabInstance:
