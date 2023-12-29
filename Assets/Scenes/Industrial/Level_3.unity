@@ -5306,11 +5306,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -6.764374, y: 3.5332718}
+    - - {x: -7.0080566, y: 3.4114304}
       - {x: -14.910998, y: 3.54298}
       - {x: -14.817227, y: -2.3990517}
-      - {x: -2.2419343, y: -2.426006}
-      - {x: -2.2020578, y: 3.4621315}
+      - {x: -7.1996613, y: -2.2561493}
+      - {x: -7.144657, y: -10.029663}
+      - {x: 40.8582, y: -9.920891}
+      - {x: 40.51539, y: 10.335705}
+      - {x: -7.1974688, y: 9.858692}
   m_UseDelaunayMesh: 0
 --- !u!4 &637849911
 Transform:
@@ -11769,6 +11772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneChanger BottomRight
       objectReference: {fileID: 0}
+    - target: {fileID: 9096346844093475167, guid: 19a5dd90fdaccb54b8b9f32237d91fe8, type: 3}
+      propertyPath: _sceneName
+      value: Industrial_Boss_Fight
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11822,6 +11829,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4375539043932952355, guid: da83d710248d4b448adf30d025be5562, type: 3}
+      propertyPath: _defaultSpawnPoint
+      value: 
+      objectReference: {fileID: 1928954810}
     - target: {fileID: 4375539043932952355, guid: da83d710248d4b448adf30d025be5562, type: 3}
       propertyPath: _spawnPoints.Array.size
       value: 2
