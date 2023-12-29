@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!-- Generated file, do not modify, your changes will be overwritten (use AssetPostprocessor.OnGeneratedCSProject) -->
   <PropertyGroup>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -55,6 +55,11 @@
     <UnityVersion>2022.3.16f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.16f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
+    <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.16f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Scripts\DataPersistance\Data\GameData.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyPatrol.cs" />
     <Compile Include="Assets\Scripts\FearSystem\FearEntity.cs" />
@@ -64,8 +69,8 @@
     <Compile Include="Assets\Scripts\DataPersistance\IDataPersistance.cs" />
     <Compile Include="Assets\Scripts\SceneChangers\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\Enemy\HammerMovement.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Abilities\Wall.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Health\Health.cs" />
     <Compile Include="Assets\Scripts\Abilities\Dash.cs" />
     <Compile Include="Assets\Scripts\Abilities\Cock.cs" />
@@ -83,6 +88,7 @@
     <Compile Include="Assets\Scripts\Menu\Slider.cs" />
     <Compile Include="Assets\Scripts\Animals\CatRed.cs" />
     <Compile Include="Assets\Scripts\DataPersistance\DataPersistanceManager.cs" />
+    <Compile Include="Assets\Scripts\WallCock.cs" />
     <Compile Include="Assets\Scripts\FearSystem\FearController.cs" />
     <Compile Include="Assets\Scripts\SceneChangers\SpawnPointsManager.cs" />
     <Compile Include="Assets\Scripts\Interactable\IInteractable.cs" />
