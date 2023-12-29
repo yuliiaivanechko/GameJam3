@@ -217,6 +217,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4375539043932952355, guid: da83d710248d4b448adf30d025be5562, type: 3}
+      propertyPath: _defaultSpawnPoint
+      value: 
+      objectReference: {fileID: 567212513}
+    - target: {fileID: 4375539043932952355, guid: da83d710248d4b448adf30d025be5562, type: 3}
       propertyPath: _spawnPoints.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -242,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7597507123576941548, guid: da83d710248d4b448adf30d025be5562, type: 3}
       propertyPath: m_Name
-      value: SpawnPointManager(Left)
+      value: SpawnPointManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -370,9 +374,9 @@ PolygonCollider2D:
     - - {x: 0.68450165, y: 14.382599}
       - {x: -19.615871, y: 14.238743}
       - {x: -19.823353, y: 3.7130203}
-      - {x: -19.95831, y: -6.9850464}
-      - {x: -1.3782821, y: -6.748722}
-      - {x: 11.635046, y: -6.898449}
+      - {x: -20.855534, y: -7.938347}
+      - {x: -0.70536566, y: -8.150631}
+      - {x: 12.364038, y: -8.132122}
       - {x: 11.324163, y: 2.8469925}
       - {x: 11.179646, y: 13.88641}
   m_UseDelaunayMesh: 0

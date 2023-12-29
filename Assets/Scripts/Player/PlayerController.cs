@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
 
     private HashSet<IInteractable> _activeInteracts;
     private HashSet<Enemy> _activeEnemies;
+    private Collider2D _collider;
 
     // Start is called before the first frame update
     private void Start()
@@ -101,6 +102,7 @@ public class PlayerController : MonoBehaviour
         _activeEnemies = new HashSet<Enemy>();
         _health = GetComponent<Health>();
         _fearController = GetComponent<FearController>();
+        _collider = GetComponent<Collider2D>();
 
     }
 
@@ -285,6 +287,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!_collider.IsTouching(collision))
+        {
+            return;
+        }
         IInteractable interactable = collision.GetComponent<IInteractable>();
         if (interactable != null)
         {
@@ -318,6 +324,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (_collider.IsTouching(collision))
+        {
+            return;
+        }
+
         IInteractable interactable = collision.GetComponent<IInteractable>();
         if (interactable != null)
         {
