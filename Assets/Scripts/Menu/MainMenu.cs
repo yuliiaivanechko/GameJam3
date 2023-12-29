@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
     public void OnNewGameClicked()
     {
         DataPersistanceManager.instance.NewGame();
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync("Tutor_Movement");
     }
 
     public void OnLoadGameClicked()

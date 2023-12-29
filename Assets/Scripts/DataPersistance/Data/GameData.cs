@@ -21,7 +21,7 @@ public class GameData
         this.doubleJump = false;
         this.dash = false;
         this.wall = false;
-        sceneName = "Level_1";
+        sceneName = "Tutor_Movement";
     }
 
 }

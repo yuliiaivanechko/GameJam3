@@ -302,6 +302,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4375539043932952355, guid: da83d710248d4b448adf30d025be5562, type: 3}
+      propertyPath: _defaultSpawnPoint
+      value: 
+      objectReference: {fileID: 1303362036}
+    - target: {fileID: 4375539043932952355, guid: da83d710248d4b448adf30d025be5562, type: 3}
       propertyPath: _spawnPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1303362036}
@@ -514,11 +518,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1879382264714627149, guid: 1a1df35d0237a9547a5a86b1d69ddc79, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.397987
+      value: -19.99626
       objectReference: {fileID: 0}
     - target: {fileID: 1879382264714627149, guid: 1a1df35d0237a9547a5a86b1d69ddc79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -93.489235
+      value: -92.706
       objectReference: {fileID: 0}
     - target: {fileID: 1879382264714627149, guid: 1a1df35d0237a9547a5a86b1d69ddc79, type: 3}
       propertyPath: m_LocalPosition.z
@@ -638,12 +642,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.7860374, y: 0.9951019}
-      - {x: 2.5421991, y: -0.41338754}
-      - {x: 2.2375665, y: -3.5051308}
-      - {x: 3.9658089, y: -3.3735428}
-      - {x: 4.2076826, y: -1.4985008}
-      - {x: 3.9395866, y: 0.823658}
+    - - {x: 1.8832092, y: 2.736267}
+      - {x: -0.037312508, y: 3.0044591}
+      - {x: -0.021661282, y: -5.4369087}
+      - {x: 11.340497, y: -5.384819}
+      - {x: 11.462558, y: 2.6287193}
+      - {x: 3.2947083, y: 2.6938057}
   m_UseDelaunayMesh: 0
 --- !u!4 &932103768
 Transform:
