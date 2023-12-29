@@ -80,7 +80,7 @@ public class EnemyPatrol: MonoBehaviour
     {
         Gizmos.color = Color.red;
         Vector3 center = 0.5f * (leftEdge.position + rightEdge.position);
-        Vector3 size = (leftEdge.position - rightEdge.position) + new Vector3(0.5f, 0.5f, 0);
+        Vector3 size = (leftEdge.position - rightEdge.position) + new Vector3(0.01f, 0.01f, 0);
         Gizmos.DrawWireCube(center, size);
     }
 }
