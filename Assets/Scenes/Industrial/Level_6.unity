@@ -4228,6 +4228,74 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1001 &413683769
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 591826297824178999, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 591826297824178999, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 591826297824178999, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 591826297824178999, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 591826297824178999, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591826297824178999, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591826297824178999, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591826297824178999, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591826297824178999, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 591826297824178999, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082016190031154168, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
+      propertyPath: m_Name
+      value: FollowCamera
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
+--- !u!114 &413683770 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2448803572209413925, guid: f64e8058bdc62244bac8b7204a3d3656, type: 3}
+  m_PrefabInstance: {fileID: 413683769}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &517261831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11221,6 +11289,7 @@ GameObject:
   - component: {fileID: 1925058092}
   - component: {fileID: 1925058094}
   - component: {fileID: 1925058093}
+  - component: {fileID: 1925058095}
   m_Layer: 0
   m_Name: Cockwall
   m_TagString: Untagged
@@ -11404,6 +11473,20 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1925058095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925058091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25d8b6c2740c994d956b926682016d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virtualCamera: {fileID: 413683770}
+  newConfiner: {fileID: 1940890685}
 --- !u!1 &1940890684
 GameObject:
   m_ObjectHideFlags: 0
@@ -11466,9 +11549,9 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -3.1643486, y: -1.12426}
-      - {x: -3.12846, y: 1.7966232}
+      - {x: -3.5142708, y: 1.7966232}
       - {x: -12.291362, y: 1.8554189}
-      - {x: -12.115529, y: -5.120205}
+      - {x: -12.308431, y: -5.120205}
       - {x: -3.1294885, y: -5.1202126}
       - {x: -3.1726923, y: -2.268322}
   m_UseDelaunayMesh: 0
@@ -11544,3 +11627,4 @@ SceneRoots:
   - {fileID: 1022774591}
   - {fileID: 1940890686}
   - {fileID: 517261831}
+  - {fileID: 413683769}
